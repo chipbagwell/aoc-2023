@@ -7,10 +7,20 @@ data2 = [(7,9),(15,40),(30,200)]
 def part_1():
   return reduce(lambda x,y: x*y, [sum([1 for s in range(race[0]+1) if (race[0]-s)*s > race[1]]) for race in data])
       
+def part_1a():
+  final_value = 1
+  for race in data:
+    winning_times = 0
+    for s in range(race[0]+1):
+      if (race[0]-s)*s > race[1]:
+        winning_times += 1
+    # winning_times is the number of times I won this race
+    final_value = final_value * winning_times
+  return final_value
 
 def part_2():
   # solve 597123410321328 = (59796575 - t) t and then test numbers on either side of the answer
   # need to code this up but honestly, I used Wolfram Alpha.  An engineer has many tools!
   return 34454850
 
-print(f"Part 1: {part_1()}, Part 2: {part_2()}")
+print(f"Part 1: {part_1()}, Part 2: {part_1a()}")
