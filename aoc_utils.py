@@ -21,7 +21,7 @@ def find_all(a_str, sub, overlap=False):
 def lcm(vals: list[int]) -> int:
     """
     Least common multiple
-    
+
     Parameters:
     vals list[int]: the list of integers as input
 
@@ -30,3 +30,18 @@ def lcm(vals: list[int]) -> int:
     """
     return reduce(lambda a,b: a*b // gcd(a,b), vals)
 
+def pivot_2d_y_to_x(data):
+    """
+    Given a list of strings, return a new list of strings
+    Where the first string is the concatenation of the first
+    characters of each original string, the second string
+    is the concatenation of the second characters of each 
+    original string (reflection along the n,n diagonal)
+    
+    Parameters:
+    data list[str]: the original list of strings as input
+    
+    Returns:
+    list[str]: the return list of strings
+    """
+    return [''.join([d[l] for d in data ]) for l in range(len(data[0]))]
