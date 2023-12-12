@@ -45,3 +45,17 @@ def pivot_2d_y_to_x(data):
     list[str]: the return list of strings
     """
     return [''.join([d[l] for d in data ]) for l in range(len(data[0]))]
+
+def manhatten_distance(x, y):
+    """
+    Given two complex numbers, calculate the 'manhatten' distance
+    between the numbers as a whole non-unit number
+    
+    Parameters:
+    x complex(): the first complex number
+    y complex(): the second complex number
+    
+    Returns:
+    int: the 'manhatten' distance
+    """
+    return abs(x[0]-y[0])+abs((x[1]-y[1]))
